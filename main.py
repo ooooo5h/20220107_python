@@ -44,4 +44,20 @@ def send_fcm_by_library(title, body) :
     print(result)
     
 
-send_fcm_by_library('되나?', '파이썬 pyFCM라이브러리로 전송합니다')
+# send_fcm_by_library('되나?', '파이썬 pyFCM라이브러리로 전송합니다')
+
+def send_sms_message(phone, message):
+    aligo_url = 'https://apis.aligo.in/send/'
+    aligo_api_key = 'i5m8plmyxhcpwfvty29hbzko2zzgi0nq'
+    data = {
+        'key' : aligo_api_key,
+        'user_id' : 'cho881020',
+        'sender' : '01051123237',
+        'receiver' : phone,
+        'msg' : message,
+        'testmode_yn' : 'y'
+    }
+    
+    requests.post(url=aligo_url, data=data)
+    
+send_sms_message('01090110390', '파이썬으로 문자보내기 정말 가나!?!?')
