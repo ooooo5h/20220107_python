@@ -14,3 +14,13 @@ def send_fcm_notification(title, body) :
         'Authorization' : 'key=AAAAIa5pqTE:APA91bEHapMzDNGFdrQGHrlxyNifVPyA1cSfypmDq94BWtX6QlRFq9OJPhE-gO1yk9y0ichwd8DBNeeAgtPltUiypiA-6z1FtK0YCxgnjUtOiN767MU0RYYTWGG8h6PCZ7Qazl9xPRmy',
         'Content-Type' : 'appication/json; UTF-8,'       
     }
+    
+    content = {
+        'registration_ids' : 'fGavK4YBTHWXSqdkGyY7cD:APA91bF63mlYpAOASOi8M1zwOonEQyBliuOfjx8nleTCZtqLifYUBooXbLoclPBApDqzPOM4T5OVKvTCQ2t5OUj58BZJ8Yh1nIfJYOWk_Fvmfzj9JUDyJ6FHMdSo5p6NNrWo7_IXQtXn',  # 어느 기기에 보낼건지, 디바이스 토큰 cf) 리스트로 넣으면, 여러 기기에 동시 전송하는 효과가 있음
+        'notification' : {
+            
+            'title' : title,
+            'body' : body,
+            
+            }, # 기본양식의 알림을 전송하겠다는 뜻. 키를 data-message로 보내면, 커스터마이징을 지원함
+    }
